@@ -2,8 +2,9 @@ library(dplyr)
 library(plotly)
 
 install.packages("plotly")
-
+all = read.csv("all.csv", sep = "~")
 aeronave = read.csv("aeronave.csv")
+fatalidades = apply(aeronave, aeronave$fatalidades, sum)
 ocorrencia = read.csv("ocorrencia.csv")
 fabricantes = aeronave$fabricante
 fab = data.frame(table(fabricantes))
@@ -18,3 +19,5 @@ g <- plot_ly(x = fab$Freq, y = fab$fabricantes, type = 'bar', orientation = 'h')
 
 g
 
+
+df 
